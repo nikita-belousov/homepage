@@ -12,5 +12,8 @@ jobs:
             echo 'This is the delivery pipeline'
       - run:
           name: The Second Step
-          command: ls -l
+          command: ls -la
+      - run:
+          name: The Third Step
+          command: echo 'hey'
           
