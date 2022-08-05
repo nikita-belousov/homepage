@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    width: 60%;
+    height: 100%;
+}
+
+.meImage {
+    position: relative;
+    z-index: 10;
+    top: -8vw;
+    width: 28vw;
+    transform: scaleX(-1);
+}
+
+@media only screen and (max-width: 1080px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .meImage {
+        top: 0;
+        right: 0;
+        margin: 0 auto 32px;
+        order: 1;
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    .content {
+        order: 2;
+        width: 100%;
+    }
+}

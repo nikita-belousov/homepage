@@ -1,0 +1,39 @@
+.socialButtons {
+    position: relative;
+    top: -16px;
+}
+
+.socialButtons ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.socialButtons li:not(:last-child) {
+    margin-right: 32px;
+}
+
+.button {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+.button:hover,
+.button:active {
+    color: var(--color-accent);
+}
+
+@media only screen and (max-width: 1080px) {
+    .socialButtons {
+        top: -14px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .button {
+        width: 24px;
+        height: 24px;
+    }
+}

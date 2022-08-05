@@ -1,0 +1,9 @@
+:root {
+  --color-background: #1B1B1B;
+  --color-accent: #FFE600;
+  --color-text-primary: #000;
+
+  --header-size: 150px;
+  --header-size-mobile: 210px;
+  --footer-size: 100px;
+}
