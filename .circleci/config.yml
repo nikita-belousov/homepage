@@ -1,20 +1,14 @@
 version: 2.1
 jobs:
-  build:
+  unit:
     docker:
-      - image: cimg/base:2021.04
+      - image: cimg/node:14.20.0
     steps:
       - checkout
       - run:
-          name: The First Step
+          name: Unit tests
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-      - run:
-          name: The Second Step
-          command: ls -la
-      - run:
-          name: The Third Step
-          command: echo 'hey'
+            npm install
+            npm test
 
           
