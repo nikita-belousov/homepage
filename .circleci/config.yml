@@ -23,7 +23,9 @@ workflows:
   Test:
     jobs:
       - Fetch-Code
-      - Install-Deps
+      - Install-Deps:
+          requires:
+            - Fetch-Code
       - node/test:
           requires:
             - Fetch-Code
