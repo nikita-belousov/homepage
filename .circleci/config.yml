@@ -1,14 +1,9 @@
 version: 2.1
-jobs:
-  unit:
-    docker:
-      - image: cimg/node:14.20.0
-    steps:
-      - checkout
-      - run:
-          name: Unit tests
-          command: |
-            npm install
-            npm test
+orbs:
+  node: circleci/node@14.20.0`
 
-          
+workflows:
+  test:
+    jobs:
+      - unit:
+          test-results-for: jest
