@@ -13,17 +13,18 @@ jobs:
       - image: cimg/node:14.20.0
     steps:
       - node/install-packages
-  Unit-Tests:
+  node/test:
     docker:
       - image: cimg/node:14.20.0
     steps:
-      - test-results-path: junit.xml
+      - test-results-for: jest
 
 workflows:
   Test:
     jobs:
       - Fetch-Code
-      - Unit-Tests:
+      - Install-Deps
+      - node/test:
           requires:
             - Fetch-Code
             - Install-Deps
