@@ -1,9 +1,23 @@
 version: 2.1
 orbs:
-  node: circleci/node@14.20.0`
+  node: circleci/node@5.0.2
+
+jobs:
+  Fetch-Code:
+    docker:
+      - image: cimg/node:14.20.0
+    steps:
+      - checkout
+  Unit-Tests:
+    docker:
+      - image: cimg/node:14.20.0
+    steps:
+      - test-results-for: jest
 
 workflows:
-  test:
+  Test:
     jobs:
-      - unit:
-          test-results-for: jest
+      - Fetch-Code
+      - Unit-Tests:
+          requires:
+            - Fetch-Code
