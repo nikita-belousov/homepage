@@ -3,29 +3,23 @@ orbs:
   node: circleci/node@5.0.2
 
 jobs:
-  Fetch-Code:
-    docker:
-      - image: cimg/node:14.20.0
-    steps:
-      - checkout
   Install-Deps:
     docker:
       - image: cimg/node:14.20.0
     steps:
+      - checkout
       - node/install-packages
   node/test:
     docker:
       - image: cimg/node:14.20.0
     steps:
+      - checkout
       - test-results-for: jest
 
 workflows:
   Test:
     jobs:
-      - Fetch-Code
       - Install-Deps:
-          requires:
-            - Fetch-Code
       - node/test:
           requires:
             - Fetch-Code
