@@ -17,7 +17,7 @@ jobs:
     docker:
       - image: cimg/node:14.20.0
     steps:
-      - test-results-for: jest
+      - test-results-path: junit.xml
 
 workflows:
   Test:
